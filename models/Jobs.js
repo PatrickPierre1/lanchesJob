@@ -2,8 +2,14 @@ const Sequelize = require('sequelize');
 const db = require('./../db/conexao');
 
 const Jobs = db.define('jobs', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
     titulo: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
     },
     descricao: {
         type: Sequelize.STRING
