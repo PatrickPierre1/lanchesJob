@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/jobs', require('./routes/jobs'));
 
+app.use('/lanches', require('./routes/lanches'));
+
 app.listen(PORT, () => {
     console.log(`Listen port: ${PORT}`);
 });

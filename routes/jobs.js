@@ -26,6 +26,7 @@ router.get('/', (req ,res) => {
         });*/
 
     //Puxando tudo da tabela. Utilizando WHERE 
+
     /*
     Jobs.findAll({
         where: {
@@ -40,7 +41,6 @@ router.get('/', (req ,res) => {
         });
     
     */
-
     //Atualizando dados com update
    /*
    Jobs.update({titulo: 'Scrum Master'}, { 
@@ -70,20 +70,6 @@ router.get('/', (req ,res) => {
      });*/
 
      
-});
-
-
-router.get('/lanches', (req,res) => {
-    let novoLanche = {
-        nome: "X-Bacon"
-    };
-
-    Lanches.create(novoLanche)
-        .then((res) => {
-            resposta.send('Novo lanche criado!');
-        }).catch((error) => {
-            console.log(error);
-        });
 });
 
 router.post('/teste', (req, res) => {
