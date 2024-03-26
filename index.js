@@ -17,6 +17,7 @@ const PORT = 3001;
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use('/jobs', require('./routes/jobs'));
 

@@ -2,7 +2,7 @@ const express = require('express');
 const Lanches = require('./../models/Lanches');
 const router = express.Router();
 
-router.get('/listar', (req, res) => {
+router.get('/', (req, res) => {
     Lanches.findAll()
         .then((result) => {
             console.log(result);
@@ -12,20 +12,20 @@ router.get('/listar', (req, res) => {
         });
 });
 
-router.post('/criar', (req, res) => {
-    let novoLanche = {
-        nome: "X-Bacon" 
-    };
+router.post('/', (req, res) => {
+    let novoLanche = req.body;
 
     Lanches.create(novoLanche)
-        .then((res) => {
+        .then(() => {
             res.send('Novo lanche criado!');
-        }).catch((error) => {
+        })
+        .catch((error) => {
             console.log(error);
+            console.log("Deu erro!");
         });
 });
 
-router.put('/atualizar', (req, res) => {
+router.put('/', (req, res) => {
     Lanches.update({ nome: 'X-Frango' }, {
         where: {
             id: 2
@@ -39,10 +39,10 @@ router.put('/atualizar', (req, res) => {
         });
 });
 
-router.delete('/deletar', (req, res) => {
+router.delete('/', (req, res) => {
     Lanches.destroy({
         where: {
-            id: 4
+            id: 6
         }
     })
         .then((result) => {
