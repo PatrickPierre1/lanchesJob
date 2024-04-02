@@ -14,15 +14,13 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     let novoLanche = req.body;
-
     Lanches.create(novoLanche)
         .then(() => {
             res.send('Novo lanche criado!');
         })
         .catch((error) => {
             console.log(error);
-            console.log("Deu erro!");
-        });
+            console.log("Deu erro!"); });
 });
 
 router.put('/', (req, res) => {
@@ -33,7 +31,7 @@ router.put('/', (req, res) => {
     })
         .then((result) => {
             res.send('Atualizado com sucesso');
-        })
+        }) 
         .catch((error) => {
             console.log(error);
         });
