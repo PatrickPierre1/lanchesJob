@@ -24,9 +24,9 @@ router.post('/', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-    Lanches.update({ nome: 'X-Frango' }, {
+    Lanches.update({ nome: req.body.nome }, {
         where: {
-            id: 2
+            id: req.body.id
         }
     })
         .then((result) => {
@@ -40,7 +40,7 @@ router.put('/', (req, res) => {
 router.delete('/', (req, res) => {
     Lanches.destroy({
         where: {
-            id: 6
+            id: req.body.id
         }
     })
         .then((result) => {
